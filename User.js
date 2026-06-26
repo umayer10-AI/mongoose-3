@@ -23,20 +23,27 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         // uppercase: true,
     },
-    createdAt: {
-        type: Date,
-        immutable: true,
-        // default: new Date(),
-        default: () => Date.now(),
-    },
-    updatedAt: {
-        type: Date,
-        // default: new Date(),
-        default: () => Date.now(),
-    },
+
+    // createdAt: {
+    //     type: Date,
+    //     immutable: true,
+    //     // default: new Date(),
+    //     default: () => Date.now(),
+    // },
+    // updatedAt: {
+    //     type: Date,
+    //     // default: new Date(),
+    //     default: () => Date.now(),
+    // },
     bestFriend: mongoose.SchemaTypes.ObjectId,
     hobbies: [String],
     address: addressSchema,
-})
+},
+{
+    timestamps: true,
+    // versionKey: false,
+    strict: true,
+},
+)
 
 module.exports = mongoose.model("User", userSchema)

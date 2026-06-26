@@ -14,7 +14,7 @@ const connectDB = async() => {
         hobbies: ['bating','bowling'],
         address: {
           street: "Fatullah"
-        }
+        },
     })
 
     // user.name = "Ahmad"
