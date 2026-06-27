@@ -22,11 +22,17 @@ const run = async() => {
     // await user.save();
 
     const user = await User.where('age')
-    .gt(21).lt(35)
+    .gt(21)
+    .lt(35)
     .where('name')
     .equals('Umayer')
     .populate('bestFriend')
+    // .populate("bestFriend", "name age")
     .limit(1)
+
+    // const user = await User.findOne({ name: "Umayer" });
+    // const friend = await User.findById(user.bestFriend);
+    // user.bestFriend = friend;
     
     
     console.log(user)
