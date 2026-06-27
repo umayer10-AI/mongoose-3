@@ -21,7 +21,13 @@ const run = async() => {
     // user.bestFriend = "6a3ea673fa0d87b7f301b071"
     // await user.save();
 
-    const user = await User.where('age').gt(21).lt(35).where('name').equals('Umayer').limit(2).select('age')
+    const user = await User.where('age')
+    .gt(21).lt(35)
+    .where('name')
+    .equals('Umayer')
+    .populate('bestFriend')
+    .limit(1)
+    
     
     console.log(user)
     // console.log(user.length)
