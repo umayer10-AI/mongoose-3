@@ -36,7 +36,10 @@ const userSchema = new mongoose.Schema(
         //     // default: new Date(),
         //     default: () => Date.now(),
         // },
-        bestFriend: mongoose.SchemaTypes.ObjectId,
+        bestFriend: {
+            type: mongoose.SchemaTypes.ObjectId,
+            ref: 'User'
+        },
         hobbies: [String],
         address: addressSchema,
     },
